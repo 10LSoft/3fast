@@ -47,11 +47,10 @@ interessado em apoiar o desenvolvimento).
 
 ## 🧱 Estrutura básica:
 
-```3fasts/
+```
+3fasts/
 ├── fasts/              # Núcleo do framework
 ├── dev/                # Projeto de exemplo ou dev environment
-├── templates/          # Templates base usando FastHTML
-├── static/             # Assets estáticos
 ├── LICENSE
 ├── README.md
 └── pyproject.toml
