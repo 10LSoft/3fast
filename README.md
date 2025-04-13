@@ -55,3 +55,20 @@ interessado em apoiar o desenvolvimento).
 ├── README.md
 └── pyproject.toml
 ```
+
+## 📜 Licença
+
+Este projeto está licenciado sob a MIT License — sinta-se livre para usar, modificar e contribuir!
+
+## 🙌 Contribuindo
+
+Contribuições são muito bem-vindas!
+Veja a lista de issues, envie uma pull request, ou abra uma ideia nova.
+
+## 📫 Contato
+
+Criado por Genese Lessa (10LSoft) • © 2025
+Dúvidas, sugestões ou colaborações? Me chama por aqui mesmo no GitHub ou abra uma issue!
+
+
+#### Feito com 🧡 para desenvolvedores Python que gostam de produtividade e elegância.
