@@ -1,17 +1,21 @@
 import os
-from .settings import APPLICATIONS
+from . import settings
 
 
 TORTOISE_ORM = {
     "connections": {
-        "default": os.getenv("DATABASE_URL", "sqlite://fasts.sqlite3"),
+        "default": os.getenv(
+            "DATABASE_URL",
+            # "sqlite://fasts.sqlite3"
+            settings.DATABASE_URL,
+        ),
     },
     "apps": {
         "models": {
             "models": [
                 # "fasts.core.orm.models",
                 "aerich.models",
-                *[f'dev.apps.{app}.models' for app in APPLICATIONS],
+                *[f'dev.apps.{app}.models' for app in settings.APPLICATIONS],
             ],
             "default_connection": "default",
         }

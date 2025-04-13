@@ -8,12 +8,12 @@ from ..styles.welcome import welcome_css
 def index():
     paragraphs = [
         """
-        O 3Fasts é um framework web usando Python cujo objetivo é oferecer aos
+        O 3Fast é um framework web usando Python cujo objetivo é oferecer aos
         desenvolvedores uma plataforma onde eles possam criar aplicações web de
         forma rápida, fácil e intuitiva usando apenas a linguagem Python.
         """,
         """
-        O 3Fasts tem esse nome pela sua composição principal. Aqui temos
+        O 3Fast tem esse nome pela sua composição principal. Aqui temos
         simultameamente FastAPI, FastHTML e FastCSS. Esta última é uma lib
         escrita especificamente para o framework.
         """,
@@ -26,7 +26,7 @@ def index():
 
     return view.Html(
         view.Head(
-            view.Title("3Fasts"),
+            view.Title("3Fast"),
             view.Meta(charset="utf-8"),
             view.Meta(
                 name="viewport",
@@ -37,7 +37,7 @@ def index():
         ),
         view.Body(
             view.Div(
-                view.H1("Bem vindo ao 3Fasts"),
+                view.H1("Bem vindo ao 3Fast"),
                 *[view.P(p) for p in paragraphs],
                 view.Img(
                     src='/static/images/logo.svg',
@@ -45,7 +45,7 @@ def index():
                 ),
                 view.Div(
                     view.P(
-                        "3Fasts - Full Python web Framework "
+                        "3Fast - Full Python web Framework "
                         f"- {datetime.now().year}"
                     ),
                     id="footer"

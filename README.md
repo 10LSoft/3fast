@@ -1,8 +1,8 @@
-# 3fasts
+# 3Fast
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Issues](https://img.shields.io/github/issues/10LSoft/3fasts)](https://github.com/10LSoft/3fasts/issues)
+[![Issues](https://img.shields.io/github/issues/10LSoft/3Fast)](https://github.com/10LSoft/3Fast/issues)
 
 > Framework web full stack em Python, inspirado no Django.  
 > Utiliza **FastAPI**, **FastHTML**, **FastCSS** e **Tortoise ORM**, com abordagem monolítica e produtiva.
@@ -11,7 +11,7 @@
 
 ## ✨ Visão Geral
 
-**3fasts** é um framework web full stack minimalista e poderoso, que une
+**3Fast** é um framework web full stack minimalista e poderoso, que une
 backend e frontend em um único app, com uma arquitetura moderna e familiar para
 quem já conhece Django. Ele foi criado para acelerar o desenvolvimento de
 aplicações web com Python moderno e componentes reutilizáveis.
@@ -31,13 +31,13 @@ aplicações web com Python moderno e componentes reutilizáveis.
 ### Clone o projeto
 
 ```bash
-git clone https://github.com/10LSoft/3fasts
-cd 3fasts
+git clone https://github.com/10LSoft/3Fast
+cd 3Fast
 ```
 
 No momento é importante entender que o framework está em case alfa teste e os
 avanços são implantados no corpo do framework /fasts após correta implementação
-no /dev (um projeto exemplo e já gerado pelo 3fasts via CLI). Trata-se de uma
+no /dev (um projeto exemplo e já gerado pelo 3Fast via CLI). Trata-se de uma
 implementação recursiva e a versão final do pacote não terá o diretório dev
 nela.
 
@@ -48,7 +48,7 @@ interessado em apoiar o desenvolvimento).
 ## 🧱 Estrutura básica:
 
 ```
-3fasts/
+3Fast/
 ├── fasts/              # Núcleo do framework
 ├── dev/                # Projeto de exemplo ou dev environment
 ├── LICENSE

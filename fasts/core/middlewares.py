@@ -13,7 +13,7 @@ EXCLUDED_PATHS = {
 class AddTrailingSlashMiddleware(BaseHTTPMiddleware):
     """
     If you use trailing slashes in the end of the URL.
-    This is the default behavior of 3Fasts.
+    This is the default behavior of 3Fast.
     """
     async def dispatch(self, request: Request, call_next):
         path = request.url.path
