@@ -21,8 +21,19 @@ css(
     text_align='center',
     padding_top='20px',
 )
-css('h1', color='#049688')
+css('h1, h2, h3, h4, h5', color='#049688')
 css('p', font_size='16px', line_height='1.5', color='#8C8C8C')
+css('a', color='#049688', text_decoration='none')
+css(
+    'button',
+    background_color='#049688',
+    color='white',
+    border='none',
+    border_radius='5px',
+    padding='10px 20px',
+    cursor='pointer',
+    font_size='16px',
+)
 css(
     '#footer p',
     font_size='1.2em',
