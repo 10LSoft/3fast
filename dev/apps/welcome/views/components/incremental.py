@@ -1,11 +1,9 @@
 import fasthtml.common as view
-from fastapi import APIRouter
 
 from fasts.core.render import render_component
+from fasts.core.router import reverse, route
 
 from ..pages.template import welcome_template
-
-app = APIRouter()
 
 value = 0
 
@@ -14,7 +12,7 @@ def increment_component():
     return view.Div(view.H2(f'Contador: {value}'))
 
 
-@app.get('/add/', name='incremental_add')
+@route('/incremental/add/', name='incremental_add', methods=["GET"])
 def incremental_add():
     """
     Incrementa o valor passado na URL e retorna o novo valor.
@@ -42,7 +40,7 @@ def index():
         view.Button(
             'Incrementar',
             id='incremental_button',
-            hx_get='/incremental/add/',
+            hx_get=reverse('incremental_add'),
             hx_target='#incremental',
             hx_trigger='click',
             hx_swap='innerHTML',
