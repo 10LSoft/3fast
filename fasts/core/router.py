@@ -1,31 +1,28 @@
+from typing import Callable, Dict
+from urllib.parse import quote
+
 from fastapi import APIRouter
-from fasthtml.common import fast_app
+
+router = APIRouter()
+named_routes: Dict[str, str] = {}
 
 
-class Routers:
-    """
-    Esta classe tem como objetivo fornecer objetos singleton para representar
-    as rotas de frontend e backend para uso nas pages (frontend) e api
-    (backend).
-    """
-    _front_route = None
-    _back_route = None
-
-    @classmethod
-    def frontend(cls):
-        """Retorna o roteador de frontend (FastHTML)."""
-        if not cls._front_route:
-            cls._front_route, _ = fast_app(live=True)
-
-        return cls._front_route
-
-    @classmethod
-    def backend(cls):
-        """Retorna o roteador de backend (FastAPI)."""
-        if not cls._back_route:
-            cls._back_route = APIRouter()
-
-        return cls._back_route
+def route(path: str, *, name: str | None = None, **kwargs):
+    """Decorador que registra rota nomeada e adiciona no router."""
+    def decorator(func: Callable):
+        router.add_api_route(path, func, name=name, **kwargs)
+        if name:
+            named_routes[name] = path
+        return func
+    return decorator
 
 
-__all__ = ['Routers']
+def reverse(name: str, **kwargs) -> str:
+    """Gera URL a partir do nome da rota e parâmetros."""
+    path = named_routes.get(name)
+    if not path:
+        raise ValueError(f"Named route '{name}' not found.")
+    
+    for key, value in kwargs.items():
+        path = path.replace(f"{{{key}}}", quote(str(value)))
+    return path

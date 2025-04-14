@@ -1,22 +1,23 @@
-from fastapi import APIRouter
 from fasts.core.render import render_component
+from fasts.core.router import route, router
+
+# additional routes
+from .views.components.incremental import app as incremental_app
+from .views.components.incremental import index as incremental_index
 from .views.components.welcome import index as welcome_index
-from .views.components.incremental import app as rt, index as incremental_index
 
-app = APIRouter()
+# registering additional routes from components of incremental
+router.include_router(incremental_app, prefix="/incremental")
 
 
-@app.get("/", name='welcome')
+@route("/", name="welcome", methods=["GET"])
 def welcome_controller():
-    component = welcome_index()
-    return render_component(component)
+    return render_component(welcome_index())
 
 
-@app.get('/incremental/', name='incremental')
+@route("/incremental/", name="incremental", methods=["GET"])
 def incremental_controller():
-    component = incremental_index()
-    return render_component(component)
+    return render_component(incremental_index())
 
 
-app.include_router(rt, prefix='/incremental')
-__all__ = ["app"]
+__all__ = ["router"]

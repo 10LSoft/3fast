@@ -44,10 +44,10 @@ def register_apps(
 
             frontend_module = importlib.import_module(frontend_module_path)
 
-            if hasattr(frontend_module, "app"):
+            if hasattr(frontend_module, "router"):
                 app.mount(
                     '' if root_app == app_name else f"/{app_name}",
-                    frontend_module.app,
+                    frontend_module.router,
                     name=f"{app_name}-front"
                 )
             else:

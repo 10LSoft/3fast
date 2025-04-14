@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.staticfiles import StaticFiles
+from fasts.core.router import router as core_router
+
 
 from fasts.core.lifespan import get_lifespan
 from fasts.core.middlewares import AddTrailingSlashMiddleware
@@ -38,3 +40,5 @@ back_app.add_middleware(
 )
 
 back_app.add_middleware(AddTrailingSlashMiddleware)
+
+back_app.include_router(core_router)
