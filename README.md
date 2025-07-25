@@ -45,6 +45,17 @@ Implementações relacionadas ao corpo do framework deverão ser adicionadas no
 diretório /fasts e submetidas via PR para avaliação (se você estiver
 interessado em apoiar o desenvolvimento).
 
+### Rodando o pack /dev (aplicação exemplo para desenvolvimento)
+
+O projeto está sendo implementado usando poetry:
+[Poetry Project](https://python-poetry.org)
+
+```bash
+poetry install
+poetry shell
+uvicorn dev.configs.server:back_app
+```
+
 ## 🧱 Estrutura básica:
 
 ```
